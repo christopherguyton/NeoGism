@@ -1,10 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 public class BulletScript : MonoBehaviour
 {
+
+    private PlayerScript playerScript;
+
+
+    private void Start()
+    {
+        playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
+        Debug.Log(playerScript);
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "Wall")
@@ -14,15 +24,10 @@ public class BulletScript : MonoBehaviour
 
         if (collision.gameObject.tag == "Player")
         {
-            Destroy(collision.gameObject);
-            StartCoroutine(RestartGame());
+     Destroy(gameObject);
+            
         }
     }
 
-    IEnumerator RestartGame()
-    {
-        yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene("SampleScene");
 
-    }
 }

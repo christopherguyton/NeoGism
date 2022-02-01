@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4925718273135648185}
   m_Layer: 0
   m_Name: Turret
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,6 +111,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8697478172943331198, guid: 4189872c4e55b9a41a3b6c4638e19660, type: 3}
   shootTransform: {fileID: 4634291929170500614}
+  shootingTimer: 3
+  bulletSpeed: 10
 --- !u!1 &978184417489145108
 GameObject:
   m_ObjectHideFlags: 0
