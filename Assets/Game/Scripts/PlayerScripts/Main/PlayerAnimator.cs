@@ -60,7 +60,7 @@ public class PlayerAnimator : MonoBehaviour
         yield return new WaitForSeconds(1.2f);
         animator.enabled = false;
         yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene(0);
     }
 
     public void Shoot()
