@@ -12,7 +12,7 @@ public class BulletScript : MonoBehaviour
     private void Start()
     {
         playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
-        Debug.Log(playerScript);
+     
     }
 
     private void OnCollisionEnter(Collision collision)

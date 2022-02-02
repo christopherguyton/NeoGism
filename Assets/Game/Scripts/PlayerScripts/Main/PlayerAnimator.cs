@@ -21,6 +21,7 @@ public class PlayerAnimator : MonoBehaviour
         if (playerScript.inputScript.isMovingRight == true || playerScript.inputScript.isMovingLeft == true || playerScript.inputScript.isMovingUp == true || playerScript.inputScript.isMovingDown == true)
         {
             animator.SetBool("Walk", true);
+          
         } else
         {
             animator.SetBool("Walk", false);
@@ -34,6 +35,7 @@ public class PlayerAnimator : MonoBehaviour
         {
             footStepSound.Stop();
         }
+
     }
 
 
