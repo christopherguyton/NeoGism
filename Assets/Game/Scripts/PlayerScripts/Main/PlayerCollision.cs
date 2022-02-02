@@ -6,10 +6,16 @@ public class PlayerCollision : MonoBehaviour
 {
     [SerializeField]
     PlayerScript playerScript;
+    private BoxCollider col;
+
+    private void Start()
+    {
+        col = GetComponent<BoxCollider>();
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Hazard" || collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Hazard")
         {
             playerScript.playerHealth -= 2;
        

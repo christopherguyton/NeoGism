@@ -5,15 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class PlayerAnimator : MonoBehaviour
 {
+
+    //Player Script Reference
     [SerializeField]
     PlayerScript playerScript;
-    [SerializeField]
-    Animator animator;
+    //Animator
+    private Animator animator;
 
 
     //Sounds
     public AudioSource footStepSound;
     public AudioSource gunSound;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     // Update is called once per frame
     void Update()

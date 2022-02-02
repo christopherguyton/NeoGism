@@ -12,7 +12,7 @@ public class PlayerBulletScript : MonoBehaviour
         }
         if (collision.gameObject.tag == "Enemy")
         {
-            Destroy(collision.gameObject);
+            collision.gameObject.GetComponent<EnemyScript>().enemyHealth -= 2;
             Destroy(gameObject);
         }
     }
