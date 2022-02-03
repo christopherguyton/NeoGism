@@ -18,6 +18,7 @@ public class PlayerCollision : MonoBehaviour
         if (collision.gameObject.tag == "Hazard")
         {
             playerScript.playerHealth -= 2;
+            playerScript.animatorScript.TakeDamage();
        
         }
     }

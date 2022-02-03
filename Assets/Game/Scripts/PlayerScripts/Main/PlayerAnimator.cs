@@ -16,6 +16,8 @@ public class PlayerAnimator : MonoBehaviour
     //Sounds
     public AudioSource footStepSound;
     public AudioSource gunSound;
+    public AudioSource damageSound;
+    public AudioSource deathSound;
 
     private void Start()
     {
@@ -68,6 +70,15 @@ public class PlayerAnimator : MonoBehaviour
         animator.SetTrigger("Crossbow Shoot Attack");
         gunSound.Play();
         StartCoroutine(playerScript.BulletShoot());
+    }
+
+    public void TakeDamage()
+    {
+        playerScript.playerHealth -= 2;
+        animator.SetTrigger("Take Damage");
+        damageSound.Play();
+        transform.position -= transform.forward;
+
     }
 
 }

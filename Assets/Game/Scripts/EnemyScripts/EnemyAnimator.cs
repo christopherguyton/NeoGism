@@ -44,10 +44,16 @@ public class EnemyAnimator : MonoBehaviour
     {
        
         animator.SetTrigger("Right Punch Attack");
+      
     }
 
     public void RangedAttack()
     {
 
+    }
+
+    public void TakeDamage()
+    {
+        animator.SetTrigger("Take Damage");
     }
 }

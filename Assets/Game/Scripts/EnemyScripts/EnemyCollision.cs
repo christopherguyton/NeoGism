@@ -6,14 +6,31 @@ public class EnemyCollision : MonoBehaviour
 {
     [SerializeField]
     internal EnemyScript enemyScript;
-    void Start()
+
+    private GameObject player;
+
+    private void Start()
     {
-        
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void AttackPlayer()
     {
-       
+        if (enemyScript.movementScript.playerInAttackRange)
+        {
+            player.GetComponent<PlayerAnimator>().TakeDamage();
+
+        }
+
+    }
+
+    public void TakeDamage()
+    {
+        if (enemyScript.enemyHealth > 0)
+        {
+            enemyScript.enemyHealth -= 2;
+            enemyScript.animatorScript.TakeDamage();
+        }
     }
 }
+

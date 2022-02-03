@@ -14,8 +14,7 @@ public class EnemyScript : MonoBehaviour
     
 
     //Enemy Attributes
-    public float enemyHealth = 2;
-    public float enemyMoveSpeed;
+    public float enemyHealth;
 
     internal bool isDead;
 

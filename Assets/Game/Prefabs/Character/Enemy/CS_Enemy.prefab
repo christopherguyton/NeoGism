@@ -723,7 +723,7 @@ MonoBehaviour:
   animatorScript: {fileID: 6643555045400914821}
   collisionScript: {fileID: 494372807290755922}
   movementScript: {fileID: 1552240421395996326}
-  enemyHealth: 2
+  enemyHealth: 4
   enemyMoveSpeed: 0
 --- !u!114 &494372807290755922
 MonoBehaviour:
