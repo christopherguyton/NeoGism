@@ -8,7 +8,8 @@ public class EnemyScript : MonoBehaviour
     internal EnemyAnimator animatorScript;
     [SerializeField]
     internal EnemyCollision collisionScript;
-
+    [SerializeField]
+    internal EnemyMovement movementScript;
 
     
 

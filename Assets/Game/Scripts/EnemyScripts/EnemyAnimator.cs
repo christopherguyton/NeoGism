@@ -31,4 +31,23 @@ public class EnemyAnimator : MonoBehaviour
         yield return new WaitForSeconds(.3f);
         gameObject.SetActive(false);
     }
+
+    public void EnemyWalk()
+    {
+        if (!enemyScript.movementScript.playerInAttackRange && !enemyScript.movementScript.playerInSightRange) animator.SetBool("Walk", true);
+        else if (!enemyScript.movementScript.playerInAttackRange && enemyScript.movementScript.playerInSightRange) animator.SetBool("Walk", true);
+        else if (enemyScript.movementScript.playerInAttackRange && enemyScript.movementScript.playerInSightRange) animator.SetBool("Walk", false);
+
+    }
+
+    public void MeleeAttack()
+    {
+       
+        animator.SetTrigger("Right Punch Attack");
+    }
+
+    public void RangedAttack()
+    {
+
+    }
 }
