@@ -12,21 +12,16 @@ public class BulletScript : MonoBehaviour
     private void Start()
     {
         playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
-     
+
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Wall")
+        if (collision.gameObject.tag == "Wall" || collision.gameObject.tag == "Player" || collision.gameObject.tag == "Enemy")
         {
             Destroy(gameObject);
         } 
 
-        if (collision.gameObject.tag == "Player")
-        {
-             Destroy(gameObject);
-            
-        }
     }
 
 
