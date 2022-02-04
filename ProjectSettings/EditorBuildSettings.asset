@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Game/Scenes/StartScreen_.unity
+    guid: a44213a7af84eab4d83acd27ec7db027
+  - enabled: 1
     path: Assets/Game/Scenes/WhiteBox1.unity
     guid: 85f8feac3097e254d98afa0e5c92e5e1
+  - enabled: 1
+    path: Assets/Game/Scenes/EndScreen_.unity
+    guid: 33c6be43d9efacb47b0c7f2efe3dfe37
   m_configObjects: {}

@@ -31,6 +31,6 @@ public class LevelComplete : MonoBehaviour
         completeText.gameObject.SetActive(true);
         completeSound.Play();
         yield return new WaitForSeconds(3f);
-        SceneManager.LoadScene("WhiteBox1");
+        SceneManager.LoadScene("EndScreen_");
     }
 }
