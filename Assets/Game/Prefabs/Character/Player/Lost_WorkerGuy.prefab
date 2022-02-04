@@ -843,7 +843,8 @@ MonoBehaviour:
   collisionScript: {fileID: 4217313063769105300}
   animatorScript: {fileID: -1626807351236327106}
   playerHealth: 10
-  movementSpeed: 6
+  walkSpeed: 5
+  runSpeed: 10
   bulletPrefab: {fileID: 2032959658669167883, guid: b6b958dc7e32fe644a4cc49c1210b35f, type: 3}
   shootTransform: {fileID: 7981533942062880168}
   bulletSpeed: 100
@@ -1040,7 +1041,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6478d7fb30f301b4fa8f74d5d1dad094, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0

@@ -21,7 +21,9 @@ public class PlayerScript : MonoBehaviour
 
     //Public Attributes 
    public float playerHealth = 10;
-   public float movementSpeed = 5;
+   internal float movementSpeed;
+   public float walkSpeed = 5;
+   public float runSpeed = 10;
 
 
     //Internal Attributes
@@ -39,6 +41,7 @@ public class PlayerScript : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         inputScript.enabled = true;
         animatorScript.enabled = true;
+        movementSpeed = walkSpeed;
         
     }
 

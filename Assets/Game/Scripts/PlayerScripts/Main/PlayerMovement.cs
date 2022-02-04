@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     {
 
         playerScript.rb.MovePosition(playerScript.rb.position + playerScript.inputScript.movement * playerScript.movementSpeed * Time.deltaTime);
-
+        
     }
 
 

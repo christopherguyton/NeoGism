@@ -18,7 +18,7 @@ public class PlayerInput : MonoBehaviour
     //Action Booleans
     internal bool isShooting;
     internal bool isWalking;
-    //internal bool pressingRun;
+    internal bool isRunning;
 
 
     //KeyCodeVariables
@@ -34,7 +34,7 @@ public class PlayerInput : MonoBehaviour
 
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.z = Input.GetAxisRaw("Vertical");
-
+ 
 
         if (Input.GetKeyDown(shootKey) && isWalking == false)
         {
@@ -45,6 +45,16 @@ public class PlayerInput : MonoBehaviour
         else
         {
             isShooting = false;
+        }
+
+        if (Input.GetKeyDown(runKey) && isWalking == true)
+        {
+            isRunning = true;
+            playerScript.movementSpeed = playerScript.runSpeed;
+        } else if (Input.GetKeyUp(runKey))
+        {
+            isRunning = false;
+            playerScript.movementSpeed = playerScript.walkSpeed;
         }
 
 

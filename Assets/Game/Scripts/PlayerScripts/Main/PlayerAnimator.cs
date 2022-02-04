@@ -30,13 +30,21 @@ public class PlayerAnimator : MonoBehaviour
         if (playerScript.inputScript.movement.x > 0 || playerScript.inputScript.movement.x < 0 || playerScript.inputScript.movement.z < 0 || playerScript.inputScript.movement.z > 0)
         {
             transform.forward = playerScript.inputScript.movement;
-            playerScript.inputScript.isWalking = true;
             animator.SetBool("Walk", true);
-          
-        } else
+            playerScript.inputScript.isWalking = true;
+        } else 
         {
             playerScript.inputScript.isWalking = false;
             animator.SetBool("Walk", false);
+        }
+
+        if (playerScript.inputScript.isRunning == true)
+        {
+            animator.SetBool("Run", true);
+        }
+        else
+        {
+            animator.SetBool("Run", false);
         }
 
         if (animator.GetBool("Walk") == true && footStepSound.isPlaying == false)
