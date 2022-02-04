@@ -28,6 +28,7 @@ public class PlayerScript : MonoBehaviour
 
     //Internal Attributes
     internal bool isDead;
+    internal int dataDiscsHeld;
 
 
     //Variables

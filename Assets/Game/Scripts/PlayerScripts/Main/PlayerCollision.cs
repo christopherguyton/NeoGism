@@ -11,6 +11,7 @@ public class PlayerCollision : MonoBehaviour
     private void Start()
     {
         col = GetComponent<BoxCollider>();
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -19,9 +20,15 @@ public class PlayerCollision : MonoBehaviour
         {
             playerScript.playerHealth -= 2;
             playerScript.animatorScript.TakeDamage();
-       
+        }
+
+        if (collision.gameObject.tag == "Data Disc")
+        {
+            playerScript.dataDiscsHeld++;
         }
     }
+
+
 
     private void Update()
     {

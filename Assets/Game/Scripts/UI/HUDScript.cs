@@ -7,6 +7,7 @@ public class HUDScript : MonoBehaviour
 {
     private PlayerScript playerScript;
     public Text healthText;
+    public Text dataDiscs;
     void Start()
     {
         playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
@@ -17,5 +18,6 @@ public class HUDScript : MonoBehaviour
     void Update()
     {
         healthText.text = "Health: " + playerScript.playerHealth.ToString();
+        dataDiscs.text = "Data Discs: " + playerScript.dataDiscsHeld.ToString();
     }
 }
