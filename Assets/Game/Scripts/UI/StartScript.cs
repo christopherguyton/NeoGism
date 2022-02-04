@@ -8,7 +8,7 @@ public class StartScript : MonoBehaviour
   
     public void StartLevel()
     {
-        SceneManager.LoadScene("WhiteBox1");
+        SceneManager.LoadScene(1);
     }
 
 
