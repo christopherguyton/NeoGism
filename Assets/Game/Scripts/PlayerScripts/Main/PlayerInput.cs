@@ -10,79 +10,44 @@ public class PlayerInput : MonoBehaviour
 
 
 
-    //Movement Booleans
-    internal bool isMovingRight;
-    internal bool isMovingLeft;
-    internal bool isMovingUp;
-    internal bool isMovingDown;
-    internal bool isNotMoving;
+    //Movement Variable
+    internal Vector3 movement;
+
 
 
     //Action Booleans
     internal bool isShooting;
-    //internal bool isWalking;
+    internal bool isWalking;
     //internal bool pressingRun;
 
 
-    //KeyCode Variables
-    private KeyCode rightKey = KeyCode.D;
-    private KeyCode leftKey = KeyCode.A;
-    private KeyCode upKey = KeyCode.W;
-    private KeyCode downKey = KeyCode.S;
+    //KeyCodeVariables
     private KeyCode shootKey = KeyCode.Z;
     private KeyCode runKey = KeyCode.LeftShift;
 
 
 
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(rightKey))
-        {
-            isMovingRight = true;
-      
-  
-        }
-        else if (Input.GetKey(leftKey))
-        {
-            isMovingLeft = true;
-       
-        }
-        else if (Input.GetKey(upKey))
-        {
-            isMovingUp = true;
-        
-        }
-        else if (Input.GetKey(downKey))
-        {
-            isMovingDown = true;
-    
-        } else 
-        {
-            isNotMoving = true;
-            isMovingRight = false;
-            isMovingLeft = false;
-            isMovingDown = false;
-            isMovingUp = false;
-      
-        }
 
-        if (Input.GetKeyDown(shootKey))
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.z = Input.GetAxisRaw("Vertical");
+
+
+        if (Input.GetKeyDown(shootKey) && isWalking == false)
         {
             isShooting = true;
             playerScript.animatorScript.Shoot();
-            
+
         }
-        else 
+        else
         {
             isShooting = false;
         }
-        
-       
+
+
+
     }
 }

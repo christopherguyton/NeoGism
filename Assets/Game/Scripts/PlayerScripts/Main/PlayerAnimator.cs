@@ -27,12 +27,15 @@ public class PlayerAnimator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerScript.inputScript.isMovingRight == true || playerScript.inputScript.isMovingLeft == true || playerScript.inputScript.isMovingUp == true || playerScript.inputScript.isMovingDown == true)
+        if (playerScript.inputScript.movement.x > 0 || playerScript.inputScript.movement.x < 0 || playerScript.inputScript.movement.z < 0 || playerScript.inputScript.movement.z > 0)
         {
+            transform.forward = playerScript.inputScript.movement;
+            playerScript.inputScript.isWalking = true;
             animator.SetBool("Walk", true);
           
         } else
         {
+            playerScript.inputScript.isWalking = false;
             animator.SetBool("Walk", false);
         }
 
