@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerInput : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public class PlayerInput : MonoBehaviour
     [SerializeField]
     PlayerScript playerScript;
 
+
+    //MiniMap Reference
+    private GameObject miniMap;
 
 
     //Movement Variable
@@ -24,9 +28,13 @@ public class PlayerInput : MonoBehaviour
     //KeyCodeVariables
     private KeyCode shootKey = KeyCode.Z;
     private KeyCode runKey = KeyCode.LeftShift;
+    private KeyCode toggleMiniMapKey = KeyCode.M;
 
 
-
+    private void Start()
+    {
+        miniMap = GameObject.Find("MiniMapBorder");
+    }
 
     // Update is called once per frame
     void Update()
@@ -57,7 +65,10 @@ public class PlayerInput : MonoBehaviour
             playerScript.movementSpeed = playerScript.walkSpeed;
         }
 
-
+        if (Input.GetKeyDown(toggleMiniMapKey))
+        {
+            miniMap.gameObject.SetActive(!miniMap.gameObject.activeInHierarchy);
+        }
 
     }
 }

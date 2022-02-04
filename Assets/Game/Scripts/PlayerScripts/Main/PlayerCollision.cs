@@ -27,6 +27,7 @@ public class PlayerCollision : MonoBehaviour
     {
         if (playerScript.playerHealth <= 0)
         {
+            playerScript.playerHealth = 0;
             playerScript.isDead = true;
             if (playerScript.isDead)
             {
