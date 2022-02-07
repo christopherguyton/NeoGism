@@ -4,9 +4,18 @@ using UnityEngine;
 
 public class ItemCollect : MonoBehaviour
 {
+
+    //Feedback / Sound
     public AudioSource itemCollectSound;
 
 
+    //Rotation Variables
+    [SerializeField] private Vector3 _rotation;
+    [SerializeField] private float rotationSpeed;
+
+
+    //Property Variables
+    public float healthGiven;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -19,7 +28,12 @@ public class ItemCollect : MonoBehaviour
 
     IEnumerator CollectAndDestroy()
     {
-        yield return new WaitForSeconds(.2f);
+        yield return new WaitForSeconds(.4f);
         Destroy(gameObject);
+    }
+
+    private void Update()
+    {
+        transform.Rotate(_rotation * rotationSpeed * Time.deltaTime);
     }
 }

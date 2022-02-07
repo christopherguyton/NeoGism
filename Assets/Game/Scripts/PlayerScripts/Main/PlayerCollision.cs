@@ -26,6 +26,11 @@ public class PlayerCollision : MonoBehaviour
         {
             playerScript.dataDiscsHeld++;
         }
+        if(collision.gameObject.tag == "Health Pick Up")
+        {
+            float healthGiven = collision.gameObject.GetComponent<ItemCollect>().healthGiven;
+            playerScript.playerHealth += healthGiven;
+        }
     }
 
 

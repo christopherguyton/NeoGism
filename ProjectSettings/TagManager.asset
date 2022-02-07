@@ -8,6 +8,7 @@ TagManager:
   - Hazard
   - Enemy
   - Data Disc
+  - Health Pick Up
   layers:
   - Default
   - TransparentFX
