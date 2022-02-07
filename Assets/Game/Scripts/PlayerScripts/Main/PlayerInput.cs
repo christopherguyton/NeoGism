@@ -48,11 +48,11 @@ public class PlayerInput : MonoBehaviour
         {
             isShooting = true;
             playerScript.animatorScript.Shoot();
-
         }
         else
         {
             isShooting = false;
+      
         }
 
         if (Input.GetKeyDown(runKey) && isWalking == true)
@@ -71,4 +71,7 @@ public class PlayerInput : MonoBehaviour
         }
 
     }
+
+
 }
+
