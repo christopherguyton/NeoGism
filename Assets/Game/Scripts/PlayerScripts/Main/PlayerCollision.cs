@@ -26,10 +26,18 @@ public class PlayerCollision : MonoBehaviour
         {
             playerScript.dataDiscsHeld++;
         }
-        if(collision.gameObject.tag == "Health Pick Up")
+        if(collision.gameObject.tag == "Health Pick Up" && playerScript.playerHealth < playerScript.maximumHealth)
         {
             float healthGiven = collision.gameObject.GetComponent<ItemCollect>().healthGiven;
             playerScript.playerHealth += healthGiven;
+            if (playerScript.playerHealth > playerScript.maximumHealth)
+            {
+                playerScript.playerHealth = playerScript.maximumHealth;
+            }
+        } else if (collision.gameObject.tag == "Health Pick Up" && playerScript.playerHealth == playerScript.maximumHealth)
+        {
+         
+            Debug.Log("You are already at Max Health");
         }
     }
 

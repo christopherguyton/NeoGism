@@ -20,8 +20,8 @@ public class PlayerScript : MonoBehaviour
 
 
     //Public Attributes 
-   public float playerHealth = 10;
-   internal float movementSpeed;
+   public float maximumHealth;
+   public float playerHealth;
    public float walkSpeed = 5;
    public float runSpeed = 10;
 
@@ -29,7 +29,7 @@ public class PlayerScript : MonoBehaviour
     //Internal Attributes
     internal bool isDead;
     internal int dataDiscsHeld;
-
+    internal float movementSpeed;
 
     //Variables
     public GameObject bulletPrefab;
@@ -43,6 +43,7 @@ public class PlayerScript : MonoBehaviour
         inputScript.enabled = true;
         animatorScript.enabled = true;
         movementSpeed = walkSpeed;
+        playerHealth = maximumHealth;
         
     }
 

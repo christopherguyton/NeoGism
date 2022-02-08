@@ -8,7 +8,6 @@ public class ItemCollect : MonoBehaviour
     //Feedback / Sound
     public AudioSource itemCollectSound;
 
-
     //Rotation Variables
     [SerializeField] private Vector3 _rotation;
     [SerializeField] private float rotationSpeed;
@@ -19,16 +18,17 @@ public class ItemCollect : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+       
         if (collision.gameObject.CompareTag("Player"))
         {
-            itemCollectSound.Play();
-            StartCoroutine(CollectAndDestroy());
+                itemCollectSound.Play();
+                StartCoroutine(CollectAndDestroy());
         }
     }
 
     IEnumerator CollectAndDestroy()
     {
-        yield return new WaitForSeconds(.4f);
+        yield return new WaitForSeconds(.3f);
         Destroy(gameObject);
     }
 
