@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerBulletScript : MonoBehaviour
 {
+
+    //Bullet Shooting Delay
+    public float bulletShootingDelay;
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Wall")

@@ -9,7 +9,11 @@ public class PlayerInput : MonoBehaviour
     [SerializeField]
     PlayerScript playerScript;
 
+    //Input Delay
 
+    private PlayerBulletScript playerBullet;
+    private float shootingDelay;
+    private bool canShoot;
     //MiniMap Reference
     private GameObject miniMap;
 
@@ -34,20 +38,36 @@ public class PlayerInput : MonoBehaviour
     private void Start()
     {
         miniMap = GameObject.Find("MiniMapBorder");
+        playerBullet = playerScript.bulletPrefab.GetComponent<PlayerBulletScript>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(shootingDelay);
 
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.z = Input.GetAxisRaw("Vertical");
  
+        if (shootingDelay == 0)
+        {
+            canShoot = true;
+        } else if (shootingDelay > 0)
+        {
+            shootingDelay -= Time.deltaTime;
+            canShoot = false;
+        }
+        if (shootingDelay <= 0)
+        {
+            shootingDelay = 0;
+        }
 
-        if (Input.GetKeyDown(shootKey) && isWalking == false)
+        if (Input.GetKeyDown(shootKey) && isWalking == false && canShoot == true)
         {
             isShooting = true;
+            shootingDelay = playerBullet.bulletShootingDelay;
             playerScript.animatorScript.Shoot();
+
         }
         else
         {

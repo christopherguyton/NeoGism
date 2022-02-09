@@ -848,7 +848,7 @@ MonoBehaviour:
   runSpeed: 10
   bulletPrefab: {fileID: 2032959658669167883, guid: b6b958dc7e32fe644a4cc49c1210b35f, type: 3}
   shootTransform: {fileID: 7981533942062880168}
-  bulletSpeed: 100
+  bulletSpeed: 75
 --- !u!114 &4217313063769105300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -892,6 +892,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScript: {fileID: -5879029274449393970}
+  shootingDelay: 0
 --- !u!114 &-5337196436677538721
 MonoBehaviour:
   m_ObjectHideFlags: 0
