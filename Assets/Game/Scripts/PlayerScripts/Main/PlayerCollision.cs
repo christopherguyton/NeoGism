@@ -8,7 +8,8 @@ public class PlayerCollision : MonoBehaviour
     PlayerScript playerScript;
     private BoxCollider col;
 
-
+    //Damage Taken
+    private float damageTaken;
 
     //Punch Attack Info
     public Transform attackPoint;
@@ -25,7 +26,8 @@ public class PlayerCollision : MonoBehaviour
     {
         if (collision.gameObject.tag == "Hazard")
         {
-            TakeDamage(collision.gameObject.GetComponent<HazardScript>().damageDealt);
+            damageTaken = collision.gameObject.GetComponent<HazardScript>().damageDealt;
+            TakeDamage(damageTaken);
             playerScript.animatorScript.TakeDamage();
         }
 

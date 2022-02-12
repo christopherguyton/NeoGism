@@ -93,6 +93,7 @@ public class PlayerAnimator : MonoBehaviour
 
     public void TakeDamage()
     {
+        playerScript.movementScript.canMove = false;
         animator.SetTrigger("Take Damage");
         damageSound.Play();
 
