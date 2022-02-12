@@ -45,8 +45,8 @@ public class PlayerCollision : MonoBehaviour
             }
         } else if (collision.gameObject.tag == "Health Pick Up" && playerScript.playerHealth == playerScript.maximumHealth)
         {
-         
-            Debug.Log("You are already at Max Health");
+        
+        
         }
     }
 

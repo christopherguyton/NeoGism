@@ -9,6 +9,10 @@ public class LevelComplete : MonoBehaviour
     private BoxCollider col;
     public AudioSource completeSound;
     public Text completeText;
+
+
+    //Wait For Seconds Objects
+    WaitForSeconds endLevel = new WaitForSeconds(3f);
     void Start()
     {
         completeText.gameObject.SetActive(false);
@@ -30,7 +34,7 @@ public class LevelComplete : MonoBehaviour
 
         completeText.gameObject.SetActive(true);
         completeSound.Play();
-        yield return new WaitForSeconds(3f);
+        yield return endLevel;
         SceneManager.LoadScene(3);
     }
 }

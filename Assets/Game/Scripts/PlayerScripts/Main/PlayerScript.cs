@@ -19,6 +19,10 @@ public class PlayerScript : MonoBehaviour
    internal Rigidbody rb;
 
 
+    //WaitForSeconds Objects
+    WaitForSeconds bulletDelay = new WaitForSeconds(.2f);
+
+
     //Public Attributes 
    public float maximumHealth;
    public float playerHealth;
@@ -51,7 +55,7 @@ public class PlayerScript : MonoBehaviour
 
     public IEnumerator BulletShoot()
     {
-        yield return new WaitForSeconds(.2f);
+        yield return bulletDelay;
         GameObject bullet = Instantiate(bulletPrefab, shootTransform.transform.position, shootTransform.transform.rotation);
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         rb.AddForce(transform.forward * bulletSpeed, ForceMode.Impulse);

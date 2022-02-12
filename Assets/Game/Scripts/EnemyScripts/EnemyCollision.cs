@@ -9,6 +9,8 @@ public class EnemyCollision : MonoBehaviour
 
     private GameObject player;
 
+
+    public float enemyDamageGiven;
     public AudioSource damageSound;
 
     private void Start()
@@ -20,7 +22,7 @@ public class EnemyCollision : MonoBehaviour
     {
         if (enemyScript.movementScript.playerInAttackRange)
         {
-            player.GetComponent<PlayerAnimator>().TakeDamage();
+            player.GetComponent<PlayerCollision>().TakeDamage(enemyDamageGiven);
 
         }
 

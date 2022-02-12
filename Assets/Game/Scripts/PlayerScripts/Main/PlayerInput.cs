@@ -11,7 +11,7 @@ public class PlayerInput : MonoBehaviour
 
     //Input Delay
     private PlayerBulletScript playerBullet;
-    private float shootingDelay;
+    public float shootingDelay;
     private float meleeDelay;
 
     //Melee delay value

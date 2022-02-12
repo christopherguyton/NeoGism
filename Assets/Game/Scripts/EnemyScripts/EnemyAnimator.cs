@@ -6,7 +6,11 @@ public class EnemyAnimator : MonoBehaviour
 {
     [SerializeField]
     internal EnemyScript enemyScript;
-    WaitForSeconds wait;
+
+
+    //Wait For Seconds Objects
+    WaitForSeconds deathFall = new WaitForSeconds(1.2f);
+    WaitForSeconds disappear = new WaitForSeconds(.3f);
 
     //Animator Reference
     private Animator animator;
@@ -27,9 +31,9 @@ public class EnemyAnimator : MonoBehaviour
 
     IEnumerator DeathAnim()
     {
-        yield return new WaitForSeconds(1.2f);
+        yield return deathFall;
         animator.enabled = false;
-        yield return new WaitForSeconds(.3f);
+        yield return disappear;
         gameObject.SetActive(false);
     }
 

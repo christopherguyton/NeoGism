@@ -13,6 +13,11 @@ public class PlayerAnimator : MonoBehaviour
     private Animator animator;
 
 
+
+    //WaitForSeconds Objects
+    WaitForSeconds deathFall = new WaitForSeconds(1.2f);
+    WaitForSeconds restartLevel = new WaitForSeconds(1f);
+
     //Sounds
     public AudioSource footStepSound;
     public AudioSource gunSound;
@@ -70,9 +75,9 @@ public class PlayerAnimator : MonoBehaviour
 
     IEnumerator DeathAnim()
     {
-        yield return new WaitForSeconds(1.2f);
+        yield return deathFall;
         animator.enabled = false;
-        yield return new WaitForSeconds(1f);
+        yield return restartLevel;
         SceneManager.LoadScene(2);
     }
 
@@ -96,8 +101,6 @@ public class PlayerAnimator : MonoBehaviour
         playerScript.movementScript.canMove = false;
         animator.SetTrigger("Take Damage");
         damageSound.Play();
-
-
     }
 
 }

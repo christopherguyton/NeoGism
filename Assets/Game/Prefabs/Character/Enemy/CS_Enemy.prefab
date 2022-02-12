@@ -834,6 +834,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyScript: {fileID: 7940141140971697676}
+  enemyDamageGiven: 2
   damageSound: {fileID: 6482353830827894917}
 --- !u!114 &6643555045400914821
 MonoBehaviour:
