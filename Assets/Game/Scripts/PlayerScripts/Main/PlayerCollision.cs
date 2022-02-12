@@ -8,6 +8,13 @@ public class PlayerCollision : MonoBehaviour
     PlayerScript playerScript;
     private BoxCollider col;
 
+
+
+    //Punch Attack Info
+    public Transform attackPoint;
+    public float attackRange = 0.5f;
+    public float meleeDamage;
+    public LayerMask enemyMask;
     private void Start()
     {
         col = GetComponent<BoxCollider>();
@@ -41,6 +48,24 @@ public class PlayerCollision : MonoBehaviour
         }
     }
 
+    public void DoPunchDamage()
+    {
+        Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyMask);
+
+        foreach(Collider enemy in hitEnemies)
+        {
+            enemy.GetComponent<EnemyCollision>().TakeDamage(meleeDamage);
+        }
+    }
+
+
+    private void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null) return;
+
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+
+    }
 
 
     private void Update()

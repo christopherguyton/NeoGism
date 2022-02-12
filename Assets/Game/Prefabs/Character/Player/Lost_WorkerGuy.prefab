@@ -958,6 +958,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScript: {fileID: -5879029274449393970}
+  attackPoint: {fileID: 1391625562727546484}
+  attackRange: 0.7
+  meleeDamage: 1
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!114 &-1626807351236327106
 MonoBehaviour:
   m_ObjectHideFlags: 0

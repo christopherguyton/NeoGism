@@ -24,11 +24,11 @@ public class EnemyCollision : MonoBehaviour
 
     }
 
-    public void TakeDamage()
+    public void TakeDamage(float damage)
     {
         if (enemyScript.enemyHealth > 0)
         {
-            enemyScript.enemyHealth -= 2;
+            enemyScript.enemyHealth -= damage;
             enemyScript.animatorScript.TakeDamage();
         }
     }

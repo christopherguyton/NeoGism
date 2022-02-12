@@ -31,6 +31,7 @@ public class PlayerInput : MonoBehaviour
 
     //KeyCodeVariables
     private KeyCode shootKey = KeyCode.Z;
+    private KeyCode punchKey = KeyCode.P;
     private KeyCode runKey = KeyCode.LeftShift;
     private KeyCode toggleMiniMapKey = KeyCode.M;
 
@@ -88,6 +89,11 @@ public class PlayerInput : MonoBehaviour
         if (Input.GetKeyDown(toggleMiniMapKey))
         {
             miniMap.gameObject.SetActive(!miniMap.gameObject.activeInHierarchy);
+        }
+
+        if (Input.GetKeyDown(punchKey))
+        {
+            playerScript.animatorScript.PunchAttack();
         }
 
     }

@@ -6,6 +6,7 @@ public class EnemyAnimator : MonoBehaviour
 {
     [SerializeField]
     internal EnemyScript enemyScript;
+    WaitForSeconds wait;
 
     //Animator Reference
     private Animator animator;
@@ -55,5 +56,6 @@ public class EnemyAnimator : MonoBehaviour
     public void TakeDamage()
     {
         animator.SetTrigger("Take Damage");
+        transform.position -= transform.forward;
     }
 }

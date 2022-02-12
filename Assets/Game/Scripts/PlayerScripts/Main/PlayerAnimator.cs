@@ -83,6 +83,14 @@ public class PlayerAnimator : MonoBehaviour
         StartCoroutine(playerScript.BulletShoot());
     }
 
+
+    public void PunchAttack()
+    {
+
+        animator.SetTrigger("Right Punch Attack");
+
+    }
+
     public void TakeDamage()
     {
         playerScript.playerHealth -= 2;
