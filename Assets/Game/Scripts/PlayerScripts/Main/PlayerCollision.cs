@@ -25,7 +25,7 @@ public class PlayerCollision : MonoBehaviour
     {
         if (collision.gameObject.tag == "Hazard")
         {
-            playerScript.playerHealth -= 2;
+            TakeDamage(collision.gameObject.GetComponent<HazardScript>().damageDealt);
             playerScript.animatorScript.TakeDamage();
         }
 
@@ -65,6 +65,13 @@ public class PlayerCollision : MonoBehaviour
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
 
+    }
+
+
+    public void TakeDamage(float damage)
+    {
+        playerScript.playerHealth -= damage;
+        transform.position -= transform.forward;
     }
 
 

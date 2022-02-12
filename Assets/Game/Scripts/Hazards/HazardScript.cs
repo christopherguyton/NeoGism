@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class BulletScript : MonoBehaviour
+public class HazardScript : MonoBehaviour
 {
 
     private PlayerScript playerScript;
-
+    public float damageDealt;
 
     private void Start()
     {
@@ -20,9 +19,8 @@ public class BulletScript : MonoBehaviour
         if (collision.gameObject.tag == "Wall" || collision.gameObject.tag == "Player" || collision.gameObject.tag == "Enemy")
         {
             Destroy(gameObject);
-        } 
+        }
 
     }
-
-
 }
+

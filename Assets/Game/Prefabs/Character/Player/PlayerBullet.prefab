@@ -125,5 +125,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77b2096c1c45e9b4a9a83d68bbde12db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletShootingDelay: 2
+  bulletShootingDelay: 1.5
   bulletDamage: 2

@@ -9,6 +9,8 @@ public class EnemyCollision : MonoBehaviour
 
     private GameObject player;
 
+    public AudioSource damageSound;
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -29,6 +31,7 @@ public class EnemyCollision : MonoBehaviour
         if (enemyScript.enemyHealth > 0)
         {
             enemyScript.enemyHealth -= damage;
+            damageSound.Play();
             enemyScript.animatorScript.TakeDamage();
         }
     }

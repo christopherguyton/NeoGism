@@ -10,10 +10,19 @@ public class PlayerInput : MonoBehaviour
     PlayerScript playerScript;
 
     //Input Delay
-
     private PlayerBulletScript playerBullet;
     private float shootingDelay;
+    private float meleeDelay;
+
+    //Melee delay value
+    public float currentMeleeDelay;
+
+
+    //Shoot and Punch Variable Control
     private bool canShoot;
+    private bool canMelee;
+
+
     //MiniMap Reference
     private GameObject miniMap;
 
@@ -38,6 +47,7 @@ public class PlayerInput : MonoBehaviour
 
     private void Start()
     {
+        meleeDelay = currentMeleeDelay;
         miniMap = GameObject.Find("MiniMapBorder");
         playerBullet = playerScript.bulletPrefab.GetComponent<PlayerBulletScript>();
     }
@@ -45,7 +55,6 @@ public class PlayerInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(shootingDelay);
 
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.z = Input.GetAxisRaw("Vertical");
@@ -91,11 +100,25 @@ public class PlayerInput : MonoBehaviour
             miniMap.gameObject.SetActive(!miniMap.gameObject.activeInHierarchy);
         }
 
-        if (Input.GetKeyDown(punchKey))
+        if (meleeDelay == 0)
         {
-            playerScript.animatorScript.PunchAttack();
+            canMelee = true;
+        } else if (meleeDelay > 0)
+        {
+            meleeDelay -= Time.deltaTime;
+            canMelee = false;
+        }
+        if (meleeDelay <= 0)
+        {
+            meleeDelay = 0;
         }
 
+        if (Input.GetKeyDown(punchKey) && isWalking == false && canMelee == true)
+        {
+            meleeDelay = currentMeleeDelay;
+            playerScript.animatorScript.PunchAttack();
+        }
+      
     }
 
 

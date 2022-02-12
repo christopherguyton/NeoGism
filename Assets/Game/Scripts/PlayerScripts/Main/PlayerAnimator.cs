@@ -93,10 +93,9 @@ public class PlayerAnimator : MonoBehaviour
 
     public void TakeDamage()
     {
-        playerScript.playerHealth -= 2;
         animator.SetTrigger("Take Damage");
         damageSound.Play();
-        transform.position -=  transform.forward;
+
 
     }
 
