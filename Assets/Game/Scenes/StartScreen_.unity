@@ -369,8 +369,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 11.999974, y: -43.914005}
-  m_SizeDelta: {x: 257.2918, y: 66.8836}
+  m_AnchoredPosition: {x: 14.5081, y: -50.498}
+  m_SizeDelta: {x: 262.3082, y: 80.0516}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &699286113
 MonoBehaviour:
@@ -410,9 +410,11 @@ MonoBehaviour:
     W,A,S,D or Directional Buttons to Move
 
     Z to Shoot
+    / P To Punch
 
-    Left
-    Shift (while walking) to Run'
+    Left Shift (while walking) to Run
+
+    M To Toggle Mini Map'
 --- !u!222 &699286114
 CanvasRenderer:
   m_ObjectHideFlags: 0

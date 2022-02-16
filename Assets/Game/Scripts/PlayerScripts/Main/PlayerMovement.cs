@@ -20,15 +20,20 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-       
-        if (canMove == true && !playerScript.inputScript.isShooting)
+        if (playerScript != null)
         {
-            playerScript.rb.MovePosition(playerScript.rb.position + playerScript.inputScript.movement * playerScript.movementSpeed * Time.deltaTime);
-        }
+            if (canMove == true && !playerScript.inputScript.isShooting)
+            {
+                playerScript.rb.MovePosition(playerScript.rb.position + playerScript.inputScript.movement * playerScript.movementSpeed * Time.deltaTime);
+            }
 
-        if (canMove == false)
+            if (canMove == false)
+            {
+                StartCoroutine(TempMovementDelay());
+            }
+        } else
         {
-            StartCoroutine(TempMovementDelay());
+
         }
 
     }
@@ -36,7 +41,6 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator TempMovementDelay()
     {
-
         yield return movementDelay;
         canMove = true;
     }

@@ -72,6 +72,7 @@ public class PlayerCollision : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        playerScript.animatorScript.TakeDamage();
         playerScript.playerHealth -= damage;
         transform.position -= transform.forward;
     }
