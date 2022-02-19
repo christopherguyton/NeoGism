@@ -940,8 +940,8 @@ MonoBehaviour:
   animatorScript: {fileID: -1626807351236327106}
   maximumHealth: 10
   playerHealth: 10
-  walkSpeed: 5
-  runSpeed: 10
+  walkSpeed: 3
+  runSpeed: 6
   bulletPrefab: {fileID: 2032959658669167883, guid: b6b958dc7e32fe644a4cc49c1210b35f, type: 3}
   shootTransform: {fileID: 7981533942062880168}
   bulletSpeed: 75
@@ -994,6 +994,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScript: {fileID: -5879029274449393970}
+  shootingDelay: 0
   currentMeleeDelay: 0.5
 --- !u!114 &-5337196436677538721
 MonoBehaviour:
@@ -1008,6 +1009,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScript: {fileID: -5879029274449393970}
+  canMove: 0
 --- !u!54 &-940779771853928281
 Rigidbody:
   m_ObjectHideFlags: 0
