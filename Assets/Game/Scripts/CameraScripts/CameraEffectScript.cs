@@ -8,9 +8,22 @@ public class CameraEffectScript : MonoBehaviour
     public GameObject blackOutSquare;
     public float faderSpeed;
 
+    public bool fadingOut = false;
+
+    public GameObject UICanvas;
+
     public void Update()
     {
-        StartCoroutine(FadeBlackOutSquare(false, faderSpeed));
+        StartCoroutine(FadeBlackOutSquare(fadingOut, faderSpeed));
+
+
+        if (blackOutSquare.GetComponent<Image>().color.a <= 0)
+        {
+            UICanvas.SetActive(true);
+        } else
+        {
+            UICanvas.SetActive(false);
+        }
     }
 
     public IEnumerator FadeBlackOutSquare(bool fadeToBlack, float fadeSpeed)
@@ -24,8 +37,8 @@ public class CameraEffectScript : MonoBehaviour
         {
             while (blackOutSquare.GetComponent<Image>().color.a < 1)
             {
+                
                 fadeAmount = objectColor.a + (fadeSpeed * Time.deltaTime);
-
                 objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
                 blackOutSquare.GetComponent<Image>().color = objectColor;
                 yield return null;
@@ -36,6 +49,7 @@ public class CameraEffectScript : MonoBehaviour
         {
             while (blackOutSquare.GetComponent<Image>().color.a > 0)
             {
+               
                 fadeAmount = objectColor.a - (fadeSpeed * Time.deltaTime);
 
                 objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
