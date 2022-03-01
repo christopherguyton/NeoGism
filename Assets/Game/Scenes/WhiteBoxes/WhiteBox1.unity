@@ -1880,6 +1880,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5310040950450932844, guid: ec73b9c1068cc8c4d880828f36215875, type: 3}
   m_PrefabInstance: {fileID: 128618124}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &124432097 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1577811037962240092, guid: d28d8e01c13599b4894a8c504a253112, type: 3}
+  m_PrefabInstance: {fileID: 8887921550004044793}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &128618124
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10507,6 +10512,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 349c27fc1ce20b44a92cdb1fe2d8fd54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blackOutSquare: {fileID: 124432097}
+  faderSpeed: 0.5
+  fadingOut: 0
+  UICanvas: {fileID: 1835308044}
 --- !u!1001 &631082253
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29045,6 +29054,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8867781334086797020, guid: d84876ab2de5e0744863c8237fcf6ed2, type: 3}
   m_PrefabInstance: {fileID: 1176057919}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1835308044 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4952214458155829029, guid: f6758d7c2dfaa6d429ad614324c59465, type: 3}
+  m_PrefabInstance: {fileID: 4952214458810873903}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1835325974 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5144232063591209455, guid: f8c9e40ece7a099489685c42f6367ca4, type: 3}
@@ -35055,6 +35069,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1424901425}
     m_Modifications:
+    - target: {fileID: 1246943699695742327, guid: d28d8e01c13599b4894a8c504a253112, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8887921549054504584, guid: d28d8e01c13599b4894a8c504a253112, type: 3}
       propertyPath: m_Name
       value: Main Camera
