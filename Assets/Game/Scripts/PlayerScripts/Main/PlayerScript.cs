@@ -51,6 +51,8 @@ public class PlayerScript : MonoBehaviour
         
     }
 
+ 
+
 
 
     public IEnumerator BulletShoot()

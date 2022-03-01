@@ -15,7 +15,7 @@ public class ElevatorDoorScript : MonoBehaviour
 
     //Opened Elevator Position
    Vector3 leftDoorPosOpen = new Vector3(-0.55f, 0, 0);
-   Vector3 rightDoorOpen = new Vector3(-1.95f, 0, 0);
+   Vector3 rightDoorPosOpen = new Vector3(-1.95f, 0, 0);
 
 
     //Bool for if player character is in elevator
@@ -61,9 +61,9 @@ public class ElevatorDoorScript : MonoBehaviour
 
     public IEnumerator OpenElevatorDoor()
     {
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(.7f);
         leftDoor.transform.localPosition = leftDoorPosOpen;
-        rightDoor.transform.localPosition = rightDoorOpen;
+        rightDoor.transform.localPosition = rightDoorPosOpen;
         
       
         
@@ -74,7 +74,7 @@ public class ElevatorDoorScript : MonoBehaviour
         yield return new WaitForSeconds(.5f);
         leftDoor.transform.position = leftDoorPosClosed;
         rightDoor.transform.position = rightDoorPosClosed;
-        Debug.Log("Opening Door");
+    
 
 
     }
