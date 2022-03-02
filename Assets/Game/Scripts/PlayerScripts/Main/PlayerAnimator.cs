@@ -37,7 +37,14 @@ public class PlayerAnimator : MonoBehaviour
             transform.forward = playerScript.inputScript.movement;
             animator.SetBool("Walk", true);
             playerScript.inputScript.isWalking = true;
-        } else 
+
+        }
+        else if (playerScript.isInAnElevator)
+        {
+            animator.SetBool("Walk", true);
+        } 
+
+        else
         {
             playerScript.inputScript.isWalking = false;
             animator.SetBool("Walk", false);

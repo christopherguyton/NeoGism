@@ -32,6 +32,7 @@ public class PlayerScript : MonoBehaviour
 
     //Internal Attributes
     internal bool isDead;
+    internal bool isInAnElevator;
     internal int dataDiscsHeld;
     internal float movementSpeed;
 

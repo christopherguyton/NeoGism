@@ -18,10 +18,14 @@ public class ElevatorDoorScript : MonoBehaviour
    Vector3 rightDoorPosOpen = new Vector3(-1.95f, 0, 0);
 
 
-    //Bool for if player character is in elevator
+    //Bool for if player character is in elevator and door is open
     private bool isInElevator;
+    private bool doorIsOpen;
 
 
+    //Player Movement Object and Variables
+    private PlayerScript playerScript;
+    private Vector3 playerWalkOut = new Vector3(0,0,-10);
     void Start()
     {
         leftDoorPosClosed = leftDoor.transform.position;
@@ -39,6 +43,9 @@ public class ElevatorDoorScript : MonoBehaviour
         {
             StartCoroutine(CloseElevatorDoor());
         }
+
+
+
     }
 
     public void OnTriggerEnter(Collider other)
@@ -47,7 +54,9 @@ public class ElevatorDoorScript : MonoBehaviour
         {
             isInElevator = true;
           
-        } 
+        }
+
+    
     }
 
     private void OnTriggerExit(Collider other)
@@ -57,6 +66,21 @@ public class ElevatorDoorScript : MonoBehaviour
             isInElevator = false;
 
         }
+
+        if (!isInElevator)
+        {
+            other.GetComponent<PlayerScript>().isInAnElevator = false;
+
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (doorIsOpen && isInElevator)
+        {
+            other.GetComponent<PlayerScript>().isInAnElevator = true;
+            other.transform.position += playerWalkOut * Time.deltaTime * 1;
+        } 
     }
 
     public IEnumerator OpenElevatorDoor()
@@ -64,8 +88,7 @@ public class ElevatorDoorScript : MonoBehaviour
         yield return new WaitForSeconds(.7f);
         leftDoor.transform.localPosition = leftDoorPosOpen;
         rightDoor.transform.localPosition = rightDoorPosOpen;
-        
-      
+        doorIsOpen = true;
         
     }
 
