@@ -870,7 +870,7 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 64
-  walkPoint: {x: 3.22, y: 0, z: 0}
+  walkPoint: {x: 3.04, y: 0, z: 0}
   walkPointRange: 4
   timeBetweenAttacks: 2
   hasGun: 0
@@ -898,7 +898,7 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 0
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 0
   m_ObstacleAvoidanceType: 4
 --- !u!82 &6482353830827894917
 AudioSource:

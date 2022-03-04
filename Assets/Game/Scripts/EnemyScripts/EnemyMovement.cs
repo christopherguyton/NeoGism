@@ -104,6 +104,12 @@ public class EnemyMovement : MonoBehaviour
         agent.speed = 0;
     }
 
-
+    private void OnDrawGizmosSelected()
+    {
+        // Display the explosion radius when selected
+        Gizmos.color = new Color(1, 1, 0, 0.2F);
+        Gizmos.DrawWireSphere(transform.position, sightRange);
+     
+    }
 
 }
