@@ -1010,6 +1010,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerScript: {fileID: -5879029274449393970}
   canMove: 0
+  rayCastDistance: 1
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  pushBackForce: -1
 --- !u!54 &-940779771853928281
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1020,12 +1025,12 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
+  m_Constraints: 80
+  m_CollisionDetection: 1
 --- !u!65 &892149580294961898
 BoxCollider:
   m_ObjectHideFlags: 0

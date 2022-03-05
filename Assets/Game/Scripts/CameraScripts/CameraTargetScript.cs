@@ -10,12 +10,18 @@ public class CameraTargetScript : MonoBehaviour
     [SerializeField] private float movementSpeed;
 
 
+
+
     private void Start()
     {
-        
-            target = GameObject.FindGameObjectWithTag("Player").transform;
-        
-        
+     
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+     
+
+
+   
+
+
     }
 
     void LateUpdate()
@@ -23,7 +29,10 @@ public class CameraTargetScript : MonoBehaviour
         if (target != null)
         {
             Vector3 targetPosition = target.position + offset;
-            transform.position = Vector3.Lerp(transform.position, targetPosition, .2f * movementSpeed);
+            transform.position = Vector3.Lerp(transform.position, targetPosition, .5f * movementSpeed);
+
+
+
         }
     }
 }

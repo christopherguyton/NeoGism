@@ -12,9 +12,20 @@ public class PlayerMovement : MonoBehaviour
     private WaitForSeconds movementDelay = new WaitForSeconds(.5f);
 
 
+    //RayCast Information
+    public int rayCastDistance = 1;
+    public LayerMask wallLayer;
+    private GameObject lastHitObject;
+    public int pushBackForce;
+
+ 
+
+
+
     private void Start()
     {
         canMove = true;
+     
     }
 
 
@@ -25,6 +36,15 @@ public class PlayerMovement : MonoBehaviour
             if (canMove == true && !playerScript.inputScript.isShooting)
             {
                 playerScript.rb.MovePosition(playerScript.rb.position + playerScript.inputScript.movement * playerScript.movementSpeed * Time.deltaTime);
+
+                var ray = new Ray(this.transform.position, this.transform.forward);
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit, rayCastDistance, wallLayer))
+                {
+                    lastHitObject = hit.transform.gameObject;
+                    playerScript.rb.AddForce(transform.forward * pushBackForce);
+                    
+                }
             }
 
             if (canMove == false)
