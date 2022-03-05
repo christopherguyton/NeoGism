@@ -38,9 +38,10 @@ public class PlayerInput : MonoBehaviour
     internal bool isRunning;
 
 
+
     //KeyCodeVariables
     private KeyCode shootKey = KeyCode.Z;
-    private KeyCode punchKey = KeyCode.P;
+    internal KeyCode punchKey = KeyCode.P;
     private KeyCode runKey = KeyCode.LeftShift;
     private KeyCode toggleMiniMapKey = KeyCode.M;
 
