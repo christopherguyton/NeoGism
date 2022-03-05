@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7554645569661579127}
   - component: {fileID: 4539643536044778656}
   - component: {fileID: 6801217503753101278}
-  - component: {fileID: 6779401936456749913}
+  - component: {fileID: 2861288576801809682}
   m_Layer: 0
   m_Name: StandardDoor_Proto
   m_TagString: Untagged
@@ -328,7 +328,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 1.5, z: 0.47}
   m_Center: {x: 1, y: 0.75, z: -2.18}
---- !u!114 &6779401936456749913
+--- !u!114 &2861288576801809682
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

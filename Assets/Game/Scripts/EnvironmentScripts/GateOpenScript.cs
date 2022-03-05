@@ -5,19 +5,40 @@ using UnityEngine.UI;
 
 public class GateOpenScript : MonoBehaviour
 {
+
+    
     public Text gateOpenPrompt;
 
+    //Player Script Reference
     private PlayerInput playerInput;
+
+
+
+    //Bools
+    public bool keyCardNeeded;
     private bool playerColliding;
 
-    private void OnTriggerEnter(Collider other)
+    //Key Variable Type
+    public string keyCardColor;
+
+
+    public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && !keyCardNeeded)
         {
             playerColliding = true;
             playerInput = other.GetComponent<PlayerInput>();
             gateOpenPrompt.gameObject.SetActive(true);
             gateOpenPrompt.text = "Press 'P' to Open"; 
+        }
+
+        if (other.gameObject.CompareTag("Player") && keyCardNeeded)
+        {
+            playerColliding = true;
+            playerInput = other.GetComponent<PlayerInput>();
+            gateOpenPrompt.gameObject.SetActive(true);
+            gateOpenPrompt.text = "You need the " + keyCardColor + " keycard";
+           
         }
     }
 
@@ -26,12 +47,17 @@ public class GateOpenScript : MonoBehaviour
     {
         if (playerColliding == true)
         {
-           
             KeyCode openCommand = playerInput.punchKey;
-            if (Input.GetKeyDown(openCommand))
+            if (Input.GetKeyDown(openCommand) && !keyCardNeeded)
             {
                 GateOpen();
             }
+
+            if (Input.GetKeyDown(openCommand) && keyCardNeeded)
+            {
+                gateOpenPrompt.text = "You don't have the " + keyCardColor + " keycard";
+            }
+
         }
    
     }
