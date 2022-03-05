@@ -938,7 +938,6 @@ MonoBehaviour:
   movementScript: {fileID: -5337196436677538721}
   collisionScript: {fileID: 4217313063769105300}
   animatorScript: {fileID: -1626807351236327106}
-  UICanvas: {fileID: 4952214458155829029, guid: f6758d7c2dfaa6d429ad614324c59465, type: 3}
   maximumHealth: 10
   playerHealth: 10
   walkSpeed: 3
