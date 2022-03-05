@@ -11,6 +11,8 @@ public class GateCloseScript : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             gateToClose.SetActive(true);
+            gateToClose.GetComponent<GateOpenScript>().playerColliding = false;
+            Destroy(gateToClose.GetComponent<BoxCollider>());
             Destroy(gameObject);
         }
     }

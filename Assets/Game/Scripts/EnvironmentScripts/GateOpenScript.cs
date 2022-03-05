@@ -13,16 +13,20 @@ public class GateOpenScript : MonoBehaviour
     private PlayerInput playerInput;
 
 
+    //Enemy Controller Array
+    public List<GameObject> enemyLockedArray;
+
 
     //Bools
     public bool keyCardNeeded;
-    private bool playerColliding;
+    internal bool playerColliding;
+
 
     //Key Variable Type
     public string keyCardColor;
 
 
-    public void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player") && !keyCardNeeded)
         {
@@ -32,7 +36,7 @@ public class GateOpenScript : MonoBehaviour
             gateOpenPrompt.text = "Press 'P' to Open"; 
         }
 
-        if (other.gameObject.CompareTag("Player") && keyCardNeeded)
+        else if (other.gameObject.CompareTag("Player") && keyCardNeeded)
         {
             playerColliding = true;
             playerInput = other.GetComponent<PlayerInput>();
@@ -40,28 +44,8 @@ public class GateOpenScript : MonoBehaviour
             gateOpenPrompt.text = "You need the " + keyCardColor + " keycard";
            
         }
+       
     }
-
-
-    private void FixedUpdate()
-    {
-        if (playerColliding == true)
-        {
-            KeyCode openCommand = playerInput.punchKey;
-            if (Input.GetKeyDown(openCommand) && !keyCardNeeded)
-            {
-                GateOpen();
-            }
-
-            if (Input.GetKeyDown(openCommand) && keyCardNeeded)
-            {
-                gateOpenPrompt.text = "You don't have the " + keyCardColor + " keycard";
-            }
-
-        }
-   
-    }
-
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -70,6 +54,48 @@ public class GateOpenScript : MonoBehaviour
             gateOpenPrompt.gameObject.SetActive(false);
         }
     }
+
+
+    private void Update()
+    {
+
+        if (enemyLockedArray != null) 
+        { 
+            foreach (GameObject enemy in enemyLockedArray.ToArray())
+            {
+                EnemyScript enemyScript = enemy.GetComponent<EnemyScript>();
+
+                if (enemyScript.enemyHealth <= 0)
+                {
+                    enemyLockedArray.Remove(enemy);
+                }
+            }
+
+            if (enemyLockedArray.Count <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        if (gameObject != null)
+        {
+            if (playerColliding == true)
+            {
+                KeyCode openCommand = playerInput.punchKey;
+                if (Input.GetKeyDown(openCommand) && !keyCardNeeded)
+                {
+                    GateOpen();
+                }
+
+                if (Input.GetKeyDown(openCommand) && keyCardNeeded)
+                {
+                    gateOpenPrompt.text = "You don't have the " + keyCardColor + " keycard";
+                }
+
+            }
+        }
+    }
+
 
     private void GateOpen()
     {
