@@ -11,6 +11,7 @@ public class GateOpenScript : MonoBehaviour
 
     //Player Script Reference
     private PlayerInput playerInput;
+    private PlayerScript playerScript;
 
 
 
@@ -21,10 +22,12 @@ public class GateOpenScript : MonoBehaviour
 
     //Key Variable Type
     public string keyCardColor;
-
+ 
 
     private void OnTriggerEnter(Collider other)
     {
+        playerScript = other.GetComponent<PlayerScript>();
+
         if (other.gameObject.CompareTag("Player") && !keyCardNeeded)
         {
             playerColliding = true;
@@ -67,10 +70,14 @@ public class GateOpenScript : MonoBehaviour
                         GateOpen();
                     }
 
-                    if (Input.GetKeyDown(openCommand) && keyCardNeeded)
+                     if (Input.GetKeyDown(openCommand) && keyCardNeeded)
                     {
                         gateOpenPrompt.text = "You don't have the " + keyCardColor + " keycard";
-                    }
+                    } 
+                 if (Input.GetKeyDown(openCommand) && keyCardNeeded && playerScript.holdingKey)
+                {
+                    GateOpen();
+                }
 
                 }
             
@@ -82,5 +89,9 @@ public class GateOpenScript : MonoBehaviour
     {
         gateOpenPrompt.gameObject.SetActive(false);
         gameObject.SetActive(false);
+        if (playerScript.holdingKey)
+        {
+            playerScript.holdingKey = !playerScript.holdingKey;
+        }
     }
 }

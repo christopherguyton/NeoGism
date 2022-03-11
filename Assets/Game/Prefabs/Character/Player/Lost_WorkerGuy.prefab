@@ -942,6 +942,7 @@ MonoBehaviour:
   playerHealth: 10
   walkSpeed: 3
   runSpeed: 6
+  holdingKey: 0
   bulletPrefab: {fileID: 2032959658669167883, guid: b6b958dc7e32fe644a4cc49c1210b35f, type: 3}
   shootTransform: {fileID: 7981533942062880168}
   bulletSpeed: 75

@@ -28,13 +28,14 @@ public class PlayerScript : MonoBehaviour
    public float playerHealth;
    public float walkSpeed = 5;
    public float runSpeed = 10;
-
+   public bool holdingKey;
 
     //Internal Attributes
     internal bool isDead;
     internal bool isInAnElevator;
     internal int dataDiscsHeld;
     internal float movementSpeed;
+    
 
     //Variables
     public GameObject bulletPrefab;

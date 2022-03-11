@@ -48,6 +48,11 @@ public class PlayerCollision : MonoBehaviour
         
         
         }
+
+        if (collision.gameObject.tag == "Keycard")
+        {
+            playerScript.holdingKey = true;
+        }
     }
 
     public void DoPunchDamage()

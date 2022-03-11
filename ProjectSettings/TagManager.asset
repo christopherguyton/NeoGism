@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Data Disc
   - Health Pick Up
+  - Keycard
   layers:
   - Default
   - TransparentFX
