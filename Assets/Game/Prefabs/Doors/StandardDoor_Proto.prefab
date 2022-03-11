@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7554645569661579127}
   - component: {fileID: 4539643536044778656}
   - component: {fileID: 6801217503753101278}
-  - component: {fileID: 2861288576801809682}
+  - component: {fileID: 7130849608244046877}
   m_Layer: 0
   m_Name: StandardDoor_Proto
   m_TagString: Untagged
@@ -328,7 +328,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 1.5, z: 0.47}
   m_Center: {x: 1, y: 0.75, z: -2.18}
---- !u!114 &2861288576801809682
+--- !u!114 &7130849608244046877
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -337,7 +337,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 799057904033334032}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 045c62f9ffcc9a3469b0996596bb5224, type: 3}
+  m_Script: {fileID: 11500000, guid: 7af185fac12cb78489faabac4a2ad241, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gateOpenPrompt: {fileID: 0}
+  keyCardNeeded: 0
+  keyCardColor: 
+  enemyLockedArray: []

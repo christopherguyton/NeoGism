@@ -13,9 +13,6 @@ public class GateOpenScript : MonoBehaviour
     private PlayerInput playerInput;
 
 
-    //Enemy Controller Array
-    public List<GameObject> enemyLockedArray;
-
 
     //Bools
     public bool keyCardNeeded;
@@ -56,48 +53,32 @@ public class GateOpenScript : MonoBehaviour
     }
 
 
-    private void Update()
+  public void Update()
     {
 
-        if (enemyLockedArray != null) 
-        { 
-            foreach (GameObject enemy in enemyLockedArray.ToArray())
-            {
-                EnemyScript enemyScript = enemy.GetComponent<EnemyScript>();
 
-                if (enemyScript.enemyHealth <= 0)
+            if (gameObject != null)
+            {
+                if (playerColliding == true)
                 {
-                    enemyLockedArray.Remove(enemy);
-                }
-            }
+                    KeyCode openCommand = playerInput.punchKey;
+                    if (Input.GetKeyDown(openCommand) && !keyCardNeeded)
+                    {
+                        GateOpen();
+                    }
 
-            if (enemyLockedArray.Count <= 0)
-            {
-                Destroy(gameObject);
-            }
+                    if (Input.GetKeyDown(openCommand) && keyCardNeeded)
+                    {
+                        gateOpenPrompt.text = "You don't have the " + keyCardColor + " keycard";
+                    }
+
+                }
+            
+        }
         }
 
-        if (gameObject != null)
-        {
-            if (playerColliding == true)
-            {
-                KeyCode openCommand = playerInput.punchKey;
-                if (Input.GetKeyDown(openCommand) && !keyCardNeeded)
-                {
-                    GateOpen();
-                }
 
-                if (Input.GetKeyDown(openCommand) && keyCardNeeded)
-                {
-                    gateOpenPrompt.text = "You don't have the " + keyCardColor + " keycard";
-                }
-
-            }
-        }
-    }
-
-
-    private void GateOpen()
+       public void GateOpen()
     {
         gateOpenPrompt.gameObject.SetActive(false);
         gameObject.SetActive(false);

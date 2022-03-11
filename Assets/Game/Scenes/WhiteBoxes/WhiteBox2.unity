@@ -2259,7 +2259,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh27960
+  m_Name: pb_Mesh27976
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6847,6 +6847,10 @@ PrefabInstance:
     - target: {fileID: 799057904033334032, guid: 1e228dd4668c6fd449a8f614945fe8c9, type: 3}
       propertyPath: m_Name
       value: GreenGate_Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 799057904033334032, guid: 1e228dd4668c6fd449a8f614945fe8c9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1195992910034468023, guid: 1e228dd4668c6fd449a8f614945fe8c9, type: 3}
       propertyPath: m_Mesh
@@ -15758,7 +15762,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28084
+  m_Name: pb_Mesh28100
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -23077,6 +23081,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17cb597e63339dc43b7dcaad390aee31, type: 3}
+--- !u!1 &924505788 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3599097510988862185, guid: 1379b08c31586054fbeace83eb31f168, type: 3}
+  m_PrefabInstance: {fileID: 34935640}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &924543417
 Mesh:
   m_ObjectHideFlags: 0
@@ -23768,7 +23777,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28350
+  m_Name: pb_Mesh28378
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -24528,7 +24537,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-4082
+  m_Name: pb_Mesh27308
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -47401,7 +47410,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh27902
+  m_Name: pb_Mesh27918
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -49792,6 +49801,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1401188609 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3599097510988862185, guid: 1379b08c31586054fbeace83eb31f168, type: 3}
+  m_PrefabInstance: {fileID: 391632342}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1416191347
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67909,6 +67923,18 @@ PrefabInstance:
       propertyPath: gateOpenPrompt
       value: 
       objectReference: {fileID: 196829072}
+    - target: {fileID: 2861288576801809682, guid: 1e228dd4668c6fd449a8f614945fe8c9, type: 3}
+      propertyPath: enemyLockedArray.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861288576801809682, guid: 1e228dd4668c6fd449a8f614945fe8c9, type: 3}
+      propertyPath: enemyLockedArray.Array.data[0]
+      value: 
+      objectReference: {fileID: 1401188609}
+    - target: {fileID: 2861288576801809682, guid: 1e228dd4668c6fd449a8f614945fe8c9, type: 3}
+      propertyPath: enemyLockedArray.Array.data[1]
+      value: 
+      objectReference: {fileID: 924505788}
     - target: {fileID: 4539643536044778656, guid: 1e228dd4668c6fd449a8f614945fe8c9, type: 3}
       propertyPath: m_Mesh
       value: 
