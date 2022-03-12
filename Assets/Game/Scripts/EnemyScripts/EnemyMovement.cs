@@ -13,7 +13,7 @@ public class EnemyMovement : MonoBehaviour
     //Agents
     public NavMeshAgent agent;
     public Transform player;
-    public LayerMask whatIsGround, whatIsPlayer;
+    public LayerMask whatIsGround, whatIsPlayer, whatIsWall;
 
 
     //Patrolling
@@ -56,6 +56,11 @@ public class EnemyMovement : MonoBehaviour
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
         if (distanceToWalkPoint.magnitude < 1f) walkPointSet = false;
+        if (Physics.Raycast(transform.position, transform.forward, 2f, whatIsWall))
+        {
+            transform.forward = -transform.forward;
+            SearchWalkPoint();
+        }
     }
 
     private void SearchWalkPoint()
@@ -66,6 +71,7 @@ public class EnemyMovement : MonoBehaviour
         walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
 
         if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround)) walkPointSet = true;
+    
     }
     private void ChasePlayer()
     {
