@@ -28,21 +28,26 @@ public class GateOpenScript : MonoBehaviour
     {
         playerScript = other.GetComponent<PlayerScript>();
 
-        if (other.gameObject.CompareTag("Player") && !keyCardNeeded)
+        if (gateOpenPrompt != null)
         {
-            playerColliding = true;
-            playerInput = other.GetComponent<PlayerInput>();
-            gateOpenPrompt.gameObject.SetActive(true);
-            gateOpenPrompt.text = "Press 'P' to Open"; 
-        }
 
-        else if (other.gameObject.CompareTag("Player") && keyCardNeeded)
-        {
-            playerColliding = true;
-            playerInput = other.GetComponent<PlayerInput>();
-            gateOpenPrompt.gameObject.SetActive(true);
-            gateOpenPrompt.text = "You need the " + keyCardColor + " keycard";
-           
+
+            if (other.gameObject.CompareTag("Player") && !keyCardNeeded)
+            {
+                playerColliding = true;
+                playerInput = other.GetComponent<PlayerInput>();
+                gateOpenPrompt.gameObject.SetActive(true);
+                gateOpenPrompt.text = "Press 'P' to Open";
+            }
+
+            else if (other.gameObject.CompareTag("Player") && keyCardNeeded)
+            {
+                playerColliding = true;
+                playerInput = other.GetComponent<PlayerInput>();
+                gateOpenPrompt.gameObject.SetActive(true);
+                gateOpenPrompt.text = "You need the " + keyCardColor + " keycard";
+
+            }
         }
        
     }
