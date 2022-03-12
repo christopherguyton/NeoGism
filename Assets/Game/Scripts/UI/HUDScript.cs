@@ -16,6 +16,7 @@ public class HUDScript : MonoBehaviour
     public Text healthText;
     public Text dataDiscs;
     public Text weaponCoolDown;
+    public Image keyImage;
     void Start()
     {
         playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
@@ -31,5 +32,13 @@ public class HUDScript : MonoBehaviour
         healthText.text = "Health: " + playerScript.playerHealth.ToString();
         dataDiscs.text = "Data Discs: " + playerScript.dataDiscsHeld.ToString();
         weaponCoolDown.text = "Weapon Cool Down: " + Mathf.Round(playerScript.inputScript.shootingDelay * 100f).ToString();
+
+        if (playerScript.holdingKey)
+        {
+            keyImage.gameObject.SetActive(true);
+        } else
+        {
+            keyImage.gameObject.SetActive(false);
+        }
     }
 }
