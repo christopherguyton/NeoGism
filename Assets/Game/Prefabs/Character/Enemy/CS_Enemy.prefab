@@ -870,8 +870,11 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 64
+  whatIsWall:
+    serializedVersion: 2
+    m_Bits: 1024
   walkPoint: {x: 3.04, y: 0, z: 0}
-  walkPointRange: 4
+  walkPointRange: 10
   timeBetweenAttacks: 2
   hasGun: 0
   sightRange: 0
@@ -887,7 +890,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 3599097510988862185}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 3.5
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -898,7 +901,7 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 0
-  m_WalkableMask: 0
+  m_WalkableMask: 1
   m_ObstacleAvoidanceType: 4
 --- !u!82 &6482353830827894917
 AudioSource:
