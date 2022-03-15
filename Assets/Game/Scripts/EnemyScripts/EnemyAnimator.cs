@@ -14,13 +14,23 @@ public class EnemyAnimator : MonoBehaviour
 
     //Animator Reference
     private Animator animator;
+
+
+    //Bools
+    internal bool isWalking;
     
     void Start()
     {
         animator = GetComponent<Animator>();
     }
 
- 
+    private void Update()
+    {
+        if (animator.GetBool("Walk"))
+        {
+            isWalking = true;
+        }
+    }
 
     public void EnemyDeath()
     {
@@ -61,5 +71,10 @@ public class EnemyAnimator : MonoBehaviour
     {
         animator.SetTrigger("Take Damage");
         transform.position -= transform.forward;
+    }
+
+    public void Idle()
+    {
+        animator.SetTrigger("Idle");
     }
 }

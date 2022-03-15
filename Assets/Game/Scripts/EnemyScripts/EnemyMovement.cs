@@ -56,7 +56,8 @@ public class EnemyMovement : MonoBehaviour
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
         if (distanceToWalkPoint.magnitude < 1f) walkPointSet = false;
-        if (Physics.Raycast(transform.position, transform.forward, 2f, whatIsWall))
+        if (distanceToWalkPoint.magnitude <= 0) walkPointSet = false;
+        if (Physics.Raycast(transform.position, transform.forward, 1f, whatIsWall))
         {
             transform.forward = -transform.forward;
             SearchWalkPoint();
